@@ -109,10 +109,10 @@ basic.forever(function () {
         テキスト表示(問題[何問目], 1)
         入力 = キー入力()
         if (入力 == 答え[何問目]) {
-            テキスト表示("" + 入力 + " SEIKAI!!", 2)
+            テキスト表示("" + 入力 + " Correct!!", 2)
             music.playSoundEffect(music.builtinSoundEffect(soundExpression.hello), SoundExpressionPlayMode.UntilDone)
         } else {
-            テキスト表示("" + 入力 + " X Answer " + 答え[何問目], 2)
+            テキスト表示("" + 入力 + " X Answer is" + 答え[何問目], 2)
             music.playSoundEffect(music.builtinSoundEffect(soundExpression.sad), SoundExpressionPlayMode.UntilDone)
         }
         basic.pause(500)
