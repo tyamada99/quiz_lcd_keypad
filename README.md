@@ -1,16 +1,43 @@
+# ＬＣＤと４×３キーパッド作成キットを使ったクイズのサンプリ
+秋月の16X2の液晶ディスプレイ」[AE-AQM1602A(KIT)](https://akizukidenshi.com/catalog/g/gK-08896/)と４×３キーパッド作成キット：[AE-KIT45-KEYPAD4X3](https://akizukidenshi.com/catalog/g/gK-12229/)を使ってクイズを出題するサンプルプログラムです。Micro:bitとの接続には、秋月のブレイクアウトボード：[AE-MBIT-BREAKOUT-V](https://akizukidenshi.com/catalog/g/gK-14191/)を使いました。
+ＬＣＤ、キーパッドともに[MakeCode](https://makecode.microbit.org/)の拡張機能を見つけられなかったので、関数でゴリゴリに書いています。
+また、キーパッドから２文字目を取得しようとすると、同じキーのリピートみたいになってしまうので、キーを離したことを検知する必要があり、大変なので、ここではあきらめて１文字だけ取得するようにしています。
 
-> このページを開く [https://tyamada99.github.io/quiz_lcd_keypad/](https://tyamada99.github.io/quiz_lcd_keypad/)
+## 接続
+### 液晶ディスプレイの接続
+液晶ディスプレイとの接続は、以下の通りです。
 
-## 拡張機能として使用
+|micro:bit|LCD   |
+|---------|------|
+|3V|V+|
+|P19|SCL|
+|P20|SDA|
+|GND|GND|
 
-このリポジトリは、MakeCode で **拡張機能** として追加できます。
+### キーパッドとの接続
+キーパッドとの接続は、以下の通りにしました。
 
-* [https://makecode.microbit.org/](https://makecode.microbit.org/) を開く
-* **新しいプロジェクト** をクリックしてください
-* ギアボタンメニューの中にある **拡張機能** をクリックしてください
-* **https://github.com/tyamada99/quiz_lcd_keypad** を検索してインポートします。
+|micro:bit|キーパッド|
+|---------|------|
+|P0|X|
+|P1|Y|
+|P2|Z|
+|P13|A|
+|P14|B|
+|P15|C|
+|P16|D|
 
-## このプロジェクトを編集します ![ビルド ステータス バッジ](https://github.com/tyamada99/quiz_lcd_keypad/workflows/MakeCode/badge.svg)
+### 接続図
+上記の通り接続すると、以下のようなイメージになります。
+![接続図](/.github/images/connection.png)
+
+## 使い方
+電源を入れると問題が出題されるので、ボタンを押すと、正解か間違いかを画面と音で知らせます。
+
+「最初だけ」のブロックの中の「問題」と「答え」の配列を変更したり増やしたりして見てください。
+
+
+## このプロジェクトを編集します
 
 MakeCode でこのリポジトリを編集します。
 
@@ -25,7 +52,3 @@ MakeCode でこのリポジトリを編集します。
 
 ![生成されたブロック](https://github.com/tyamada99/quiz_lcd_keypad/raw/master/.github/makecode/blocks.png)
 
-#### メタデータ (検索、レンダリングに使用)
-
-* for PXT/microbit
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
