@@ -112,7 +112,7 @@ basic.forever(function () {
             テキスト表示("" + 入力 + " Correct!!", 2)
             music.playSoundEffect(music.builtinSoundEffect(soundExpression.hello), SoundExpressionPlayMode.UntilDone)
         } else {
-            テキスト表示("" + 入力 + " X Answer is" + 答え[何問目], 2)
+            テキスト表示("" + 入力 + " X Answer is " + 答え[何問目], 2)
             music.playSoundEffect(music.builtinSoundEffect(soundExpression.sad), SoundExpressionPlayMode.UntilDone)
         }
         basic.pause(500)
